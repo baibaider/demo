@@ -1,3 +1,4 @@
+git checkout 
 git branch -a 查看远程分支
 
 删除分支，直接push一个空的分支覆盖
