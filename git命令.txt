@@ -1,0 +1,63 @@
+git branch -a 查看远程分支
+
+删除分支，直接push一个空的分支覆盖
+
+文件名叫.gitignore 在文件里写要忽略的文件名/.idea/  *.html忽略全部后缀是html的文件，必须先传gitignore文件，
+
+
+
+ssh -T git@gitee.com
+测试与gitee有没有连接
+
+
+生成公钥私钥：都是在.ssh文件夹下
+1. ssh-keygen -t rsa -C 'baibaider@163.com'
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/think/.ssh/id_rsa): /c/Users/think/.ssh/gitee_rsa
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/think/.ssh/gitee_rsa.
+Your public key has been saved in /c/Users/think/.ssh/gitee_rsa.pub.
+The key fingerprint is:
+SHA256:E6CaEXOqqTHjVeHe/h+dzZsiNOr9/7YxUb4WWAxPFNY baibaider@163.com
+The key's randomart image is:
++---[RSA 2048]----+
+|  o ...      ..=o|
+|   =....      * E|
+|  o .o  .      +.|
+| o +o .  .    o..|
+|* o. . .S    . o.|
+|o+.   .  . o. + +|
+|..     .  o..o B |
+|        ....... *|
+|        .o.oo.o*+|
++----[SHA256]-----+
+
+ cat gitee_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLibrxJjlMkTDU5yPCv8kqHNS8gtpr/iGpyPDBlvqXfX82+Vl9kvaM6CZQEb2ZWTr1AhXR9uean9t0zCNPtJxOpRzVQ/gECRMzzeiLzjiFWaEfVDL5EXpOJ4VRu846CLOevmNfdmuzzJNvtQz5aLFTacBOAEBYMXirREFhKx5W8hpDtdZTy333k+L1pDI5s+giP1SnUsNubvu7zfSZ5K9Q+l3BKvvsGjVgx7R4YvjYPXauOTMpVAtXs2P8AvyXsVWJd84bPcSSD48NSsnSQLTfQKeTDbXb17Kb1WbOCfQQEb7gSKzVCjhagBIj7B0yyv9wYv422ExZhFLfIn0sq7ff baibaider@163.com
+
+没有config文件时添加并保存config文件
+ touch config
+ vim config
+i->开始编辑->esc :wq保存并退出
+
+再ssh -T git@gitee.com查看连接
+
+git reset --hard 6a54286 版本回退
+
+git status 查看当前状态
+
+git reflog 可以查看所有分支的所有操作记录（包括（包括commit和reset的操作），包括已经被删除的commit记录，git log则不能察看已经删除了的commit记录
+
+git log --graph --all 查看所有分支合并状态
+
+git checkout 分支名 跳转到该分支
+git branch 分支名 建立新分支
+git checkout -b是前两个的合并
+
+
+git remote add origin git@gitee.com:baibaider/Text.git  添加远端库
+git remote -v 查看与远端库的链接情况
+
+git pull origin 分支名 --allow-unrelated-histories pull时候有fatal时解决
+
